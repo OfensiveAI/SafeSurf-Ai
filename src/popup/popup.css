@@ -1,0 +1,308 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#app {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4caf50;
+}
+
+/* Main Content */
+.main-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Protection Status */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Switch Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4a90e2;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.stat-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a90e2;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Buttons */
+#action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.primary-button, .secondary-button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-button {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #357abd;
+}
+
+.secondary-button {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.secondary-button:hover {
+    background-color: #dee2e6;
+}
+
+/* Footer */
+.footer {
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-details p {
+    margin: 0;
+}
+
+.user-details .email {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.sign-out-btn {
+    padding: 6px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sign-out-btn:hover {
+    background: #c82333;
+}
+
+#errorMessage {
+    display: none;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.activity-item {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.timestamp {
+    color: #666;
+    font-size: 0.8em;
+}
+
+.url {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.reason {
+    color: #dc3545;
+    font-size: 0.9em;
+}
+
+/* Add these new styles to your existing CSS */
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.last-active {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.refresh-btn {
+  padding: 6px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-btn:hover {
+  background: #0056b3;
+}
+
+#loadingSpinner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

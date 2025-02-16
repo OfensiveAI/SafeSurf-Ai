@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSurf</title>
+    <link href="popup.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>SafeSurf</h1>
+            <div id="status-indicator"></div>
+        </header>
+        
+        <main class="main-content">
+            <div id="protection-status">
+                <h2>Protection Status</h2>
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="protection-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Active Protection</span>
+                </div>
+            </div>
+
+            <div id="quick-stats">
+                <h2>Today's Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" id="blocked-count">0</span>
+                        <span class="stat-label">Blocked</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="safe-count">0</span>
+                        <span class="stat-label">Safe</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="action-buttons">
+                <button id="dashboard-btn" class="primary-button">Parent Dashboard</button>
+                <button id="report-btn" class="secondary-button">Report Issue</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>SafeSurf v1.0.0</p>
+        </footer>
+    </div>
+    <div id="loadingSpinner" class="spinner"></div>
+    <script src="popup.js" type="module"></script>
+</body>
+</html>
